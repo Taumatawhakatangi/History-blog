@@ -1,0 +1,131 @@
+.tests {
+  padding: 40px 0;
+  &__item {
+    margin-bottom: 30px;
+    &_link {
+      margin: 60px auto 0 auto;
+      max-width: 550px;
+      display: flex;
+      justify-content: flex-end;
+      background: rgb(255 252 252 / 64%);
+      align-items: center;
+      border-radius: 0 30px 30px 0;
+      transition: all 0.4s ease;
+      box-shadow: 0px 3px 10px rgb(0 0 0 / 7%);
+      &:hover {
+        box-shadow: 3px 3px 20px rgb(50 50 50 / 25%);
+      }
+      &-info {
+        max-width: 225px;
+        width: 100%;
+        text-align: center;
+      }
+      &-title {
+        margin-bottom: 40px;
+        color: $color9;
+        font-weight: 900;
+        font-size: 20px;
+      }
+      &-text {
+        width: 100%;
+        padding: 0.7em 0;
+        border-radius: 30px;
+        border: 1px solid $color10;
+        background-color: #fff;
+        color: $color10;
+        font-weight: 600;
+        width: 85%;
+        margin: 0 auto;
+        &.btn:hover {
+          background: darken($color6, 10%);
+          color: $color2;
+        }
+        &.btn:active {
+          background: darken($color6, 20%);
+        }
+      }
+      &-img {
+        width: 223px;
+        height: 100%;
+        overflow: hidden;
+        margin-left: 50px;
+        border-radius: 0 30px 30px 0;
+        transition: all 16s ease;
+        & img {
+          border-radius: 0 30px 30px 0;
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    cursor: pointer;
+    max-width: 600px;
+
+    background: $color12;
+    padding: 20px 30px;
+    border-radius: 15px 15px 0 0;
+    color: $color2;
+    transition: all 0.4s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &__arrow {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: all 0.4s ease;
+  }
+  &__list {
+    padding: 40px 0;
+    width: 100%;
+    display: none;
+
+    &-item {
+      position: relative;
+      padding-right: 80px;
+    }
+    &-link {
+      position: relative;
+      z-index: 2;
+      color: $color9;
+      width: 100%;
+      display: block;
+      padding: 15px 80px 15px 10px;
+
+      &:hover + .tests__list-img {
+        right: 0;
+        opacity: 1;
+      }
+      &:hover {
+        text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+      }
+    }
+    &-img {
+      position: absolute;
+      top: 22px;
+      right: 30%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+  }
+  &__link {
+    margin: 0 auto;
+  }
+}
+
+.tests__title.active .tests__arrow {
+  transform: rotate(-223deg);
+  top: 22px;
+}

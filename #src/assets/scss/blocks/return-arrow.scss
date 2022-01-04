@@ -1,0 +1,26 @@
+.return-up {
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  display: none;
+  z-index: 3;
+  &__link {
+    border: 1px solid #bd0d48;
+    border-radius: 10px;
+    background-color: $color4;
+    padding: 8px;
+    text-align: center;
+    transition: all 0.4s ease;
+    &:hover {
+      background-color: darken($color4, 10);
+    }
+    &:active {
+      background-color: darken($color4, 16);
+    }
+  }
+  & i {
+    font-size: 30px;
+    font-weight: 700;
+    color: $color2;
+  }
+}

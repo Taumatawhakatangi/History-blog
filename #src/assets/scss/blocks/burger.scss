@@ -1,0 +1,30 @@
+.burger {
+  width: 35px;
+  height: 25px;
+  display: none;
+  position: relative;
+  z-index: 21;
+  background: $color4;
+}
+
+.burger span {
+  border-radius: 10px;
+  margin-bottom: 5px;
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+
+.burger__middle.active {
+  opacity: 0;
+}
+
+.burger__top.active {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.burger__bottom.active {
+  transform: rotate(45deg) translate(-6px, -6px);
+}

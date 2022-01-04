@@ -1,0 +1,56 @@
+.tegs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  padding: 50px 0 70px;
+  @media (max-width: 1200px) {
+    padding-top: calc(30px + (50 - 30) * ((100vw - 320px) / (1200 - 320)));
+  }
+  &:hover .tegs__description {
+    opacity: 1;
+  }
+  &__description {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  &__btn {
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 100px;
+    background-color: $color6;
+    border: 1px solid transparent;
+    padding: 7px 18px;
+    margin-bottom: 20px;
+    color: $color2;
+    transition: all 0.4s ease;
+    margin-right: 5px;
+    white-space: nowrap;
+    &:hover {
+      background: darken($color6, 10%);
+      color: $color2;
+    }
+    &:active {
+      background: darken($color6, 20%);
+    }
+  }
+  &__show-more {
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    color: $color9;
+    width: 100%;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.4s ease;
+    &:hover {
+      background: #e7e7e7;
+    }
+  }
+}

@@ -1,0 +1,201 @@
+.s-quiz {
+  padding: 60px 0 100px;
+  @media (max-width: 1200px) {
+    padding-top: calc(20px + (60 - 20) * ((100vw - 320px) / (1200 - 320)));
+    padding-bottom: calc(75px + (100 - 75) * ((100vw - 320px) / (1200 - 320)));
+  }
+}
+
+.quiz-title {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 100px;
+  @media (max-width: 1200px) {
+    font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (1200 - 320)));
+    margin-bottom: calc(65px + (100 - 65) * ((100vw - 320px) / (1200 - 320)));
+  }
+}
+
+.quiz {
+  min-height: 400px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 700px;
+  background-color: rgb(32, 35, 90);
+  border-radius: 30px;
+  padding: 50px 40px 30px 40px;
+  & .questions {
+    color: rgb(255, 255, 255);
+    margin-bottom: 40px;
+    text-align: center;
+    &__title {
+      font-size: 25px;
+      margin-bottom: 40px;
+      @media (max-width: 1200px) {
+        font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (1200 - 320)));
+      }
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  &__answers {
+    & li {
+      margin-bottom: 30px;
+    }
+    & label {
+      color: #fff;
+      width: 100%;
+    }
+    & input {
+      width: 40px;
+    }
+  }
+  &__controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__btn-next {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: $color16;
+    transition: all 0.4s ease;
+    font-weight: 700;
+    &:hover {
+      background-color: darken($color16, 10);
+    }
+    &:active {
+      background-color: darken($color16, 15);
+    }
+    &.hidden {
+      display: none;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+  &__restart {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    display: none;
+    padding: 15px 15px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    background-color: $color16;
+    font-weight: 700;
+    &:hover {
+      background-color: darken($color16, 10);
+    }
+    &:active {
+      background-color: darken($color16, 15);
+    }
+    &.visible {
+      display: block;
+    }
+  }
+  &__indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    &.hidden {
+      display: none;
+    }
+  }
+} // quiz
+
+.true-answer {
+  display: none;
+}
+
+.false-answer {
+  display: none;
+  margin-top: 5px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.results {
+  padding-bottom: 50px;
+  display: none;
+  &.visible {
+    display: block;
+  }
+  &__item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $color24;
+    padding-bottom: 10px;
+  }
+  &__title {
+    color: $color2;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+    @media (max-width: 1200px) {
+      font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1200 - 320)));
+    }
+  }
+  &__answers {
+    & li {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      &.invalid {
+        color: red;
+        & .false-answer {
+          display: block;
+        }
+      }
+      &.valid {
+        color: green;
+        & .true-answer {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  &__real {
+    display: none;
+    &:checked + .radio__fake::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgb(37, 35, 35);
+    }
+  }
+  &__fake {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 30px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+  }
+  &__title {
+    padding: 20px 0;
+    text-align: left;
+  }
+} // radio

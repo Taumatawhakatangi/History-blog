@@ -1,0 +1,65 @@
+.dates {
+  padding: 60px 0;
+  @media (max-width: 1200px) {
+    padding-top: calc(30px + (60 - 30) * ((100vw - 320px) / (1200 - 320)));
+    padding-bottom: calc(30px + (60 - 30) * ((100vw - 320px) / (1200 - 320)));
+  }
+  &__content {
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dotted #9c9b9b;
+  }
+  &__name {
+    padding: 10px 40px 10px 0;
+    width: 100%;
+    color: $color14;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__frame {
+    flex-shrink: 0;
+  }
+}
+
+.dates__wrapper {
+  text-align: center;
+}
+
+.dates__tabs {
+  font-size: 16px;
+  border: 1px solid black;
+  padding: 20px 40px;
+  margin-bottom: 30px;
+  transition: all 0.4s ease;
+  border-radius: 5px;
+  &:hover {
+    border: 1px solid $color12;
+    background: $color12;
+    color: $color2;
+  }
+  &:not(:last-of-type) {
+    margin-right: 30px;
+  }
+}
+
+.jsDatesBtn.active {
+  border: 1px solid $color12;
+  background: $color12;
+  color: $color2;
+}
+
+.jsDatesContent {
+  display: none;
+}
+
+.jsDatesContent.active {
+  display: block;
+}

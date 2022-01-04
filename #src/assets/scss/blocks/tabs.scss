@@ -1,0 +1,59 @@
+.tab-btns {
+  width: 100%;
+  max-width: 630px;
+  padding: 60px 0 30px;
+  @media (max-width: 1200px) {
+    padding-top: calc(40px + (60 - 40) * ((100vw - 320px) / (1200 - 320)));
+    padding-bottom: calc(25px + (30 - 25) * ((100vw - 320px) / (1200 - 320)));
+  }
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  & span + span {
+    margin-left: -5px;
+  }
+}
+
+.tab-btn {
+  font-size: 20px;
+  color: $color9;
+  cursor: pointer;
+  padding: 20px 40px;
+  font-weight: 600;
+  max-width: 120px;
+  transition: all 0.4s ease;
+  &:hover {
+    border-bottom: 1px solid $color10;
+  }
+}
+
+.jsTabBtn.active {
+  border-bottom: 1px solid $color10;
+  color: $color10;
+}
+
+.blog__wrapper {
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.jsTabContent {
+  transition: all 0.4s ease;
+  display: none;
+  margin-left: 100px;
+}
+
+.d-none {
+  display: none;
+}
+
+.jsTabContent.active {
+  display: block;
+  position: relative;
+  margin-left: 0;
+  width: 100%;
+  max-width: 600px;
+}

@@ -1,0 +1,62 @@
+// --------vars and reboot--------
+
+@import "blocks/vars";
+@import "blocks/reboot";
+
+// --------libraries--------
+
+// @import "blocks/outside/animate";
+@import "blocks/outside/slick";
+// @import "blocks/outside/bootstrap-grid.min";
+@import "blocks/outside/fancy";
+
+// --------fonts and specific--------
+
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff2") format("woff2"),
+      url("../fonts/#{$file_name}.woff") format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+@import "blocks/fonts";
+@import "blocks/specific";
+@import "blocks/burger";
+@import "blocks/header";
+@import "blocks/aside";
+@import "blocks/slider";
+@import "blocks/rubrics";
+@import "blocks/blog";
+@import "blocks/pagination";
+@import "blocks/tabs";
+@import "blocks/tests";
+@import "blocks/tegs";
+@import "blocks/subscribe";
+@import "blocks/footer";
+@import "blocks/breadcrumbs";
+@import "blocks/biography";
+@import "blocks/single";
+@import "blocks/dates";
+@import "blocks/events";
+@import "blocks/periods";
+@import "blocks/quotes";
+@import "blocks/post";
+@import "blocks/quiz";
+@import "blocks/return-arrow.scss";
+
+// ---------main css------------
+
+.qq {
+  display: none;
+}
+
+// -----------media-------------
+
+@import "blocks/media";
+
+// ---------IE styles-----------
+
+@import "blocks/IE";

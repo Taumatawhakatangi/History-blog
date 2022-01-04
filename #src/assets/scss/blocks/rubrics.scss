@@ -1,0 +1,75 @@
+.rubrics {
+  padding: 100px 0 100px;
+  @media (max-width: 1200px) {
+    padding-top: calc(25px + (100 - 25) * ((100vw - 320px) / (1200 - 320)));
+    padding-bottom: calc(25px + (100 - 25) * ((100vw - 320px) / (1200 - 320)));
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: -60px;
+  }
+  &__item {
+    width: 50%;
+    max-width: 550px;
+    display: flex;
+    justify-content: flex-end;
+    background: rgb(255 252 252 / 64%);
+    align-items: center;
+    margin-bottom: 60px;
+    margin-right: 30px;
+    border-radius: 0 30px 30px 0;
+    transition: all 0.4s ease;
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 7%);
+    @media (max-width: 1200px) {
+      margin-bottom: calc(30px + (60 - 30) * ((100vw - 320px) / (1200 - 320)));
+    }
+    &:hover {
+      box-shadow: 3px 3px 20px rgb(50 50 50 / 25%);
+    }
+  }
+  &__info {
+    max-width: 225px;
+    width: 100%;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 40px;
+    color: $color9;
+    font-weight: 900;
+    font-size: 20px;
+  }
+  &__text {
+    width: 100%;
+    padding: 0.7em 0;
+    border-radius: 30px;
+    border: 1px solid $color10;
+    background-color: #fff;
+    color: $color10;
+    font-weight: 600;
+    width: 85%;
+    margin: 0 auto;
+    &.btn:hover {
+      background: darken($color6, 10%);
+      color: $color2;
+    }
+    &.btn:active {
+      background: darken($color6, 20%);
+    }
+  }
+  &__img {
+    width: 223px;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 50px;
+    border-radius: 0 30px 30px 0;
+    transition: transform 16s ease;
+    & img {
+      border-radius: 0 30px 30px 0;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+} // rubrics
